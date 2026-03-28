@@ -1,6 +1,26 @@
 export function buildMissionControlCsp(input: { nonce: string; googleEnabled: boolean }): string {
   const { nonce, googleEnabled } = input
 
+  // For production (Vercel), we need more permissive CSP
+  const isVercel = process.env.VERCEL === '1'
+  
+  if (isVercel) {
+    return [
+      `default-src 'self'`,
+      `base-uri 'self'`,
+      `object-src 'none'`,
+      `frame-ancestors 'none'`,
+      // Allow inline scripts and styles for Vercel production build
+      `script-src 'self' 'nonce-${nonce}' 'unsafe-inline' blob: https://cdn.jsdelivr.net`,
+      `style-src 'self' 'nonce-${nonce}' 'unsafe-inline'`,
+      `connect-src 'self' ws: wss: http://127.0.0.1:* http://localhost:* https://cdn.jsdelivr.net https://*.vercel.app https://*.neon.tech`,
+      `img-src 'self' data: blob: https:`,
+      `font-src 'self' data:`,
+      `frame-src 'self'${googleEnabled ? ' https://accounts.google.com' : ''}`,
+      `worker-src 'self' blob:`,
+    ].join('; ')
+  }
+
   return [
     `default-src 'self'`,
     `base-uri 'self'`,
