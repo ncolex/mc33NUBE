@@ -22,6 +22,7 @@
     "quality:gate": "pnpm test:all"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
     "@radix-ui/react-slot": "^1.2.4",
     "@scalar/api-reference-react": "^0.8.66",
     "@xyflow/react": "^12.10.0",
@@ -29,6 +30,7 @@
     "better-sqlite3": "^12.6.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv-expand": "^12.0.3",
     "eslint": "^9.18.0",
     "eslint-config-next": "^16.1.6",
     "next": "^16.1.6",

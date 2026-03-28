@@ -1,0 +1,45 @@
+# Git
+.git
+.gitignore
+
+# Pnpm store
+.pnpm-store
+node_modules/.pnpm-store
+
+# Test files
+tests
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# Docs (large images)
+docs/*.png
+docs/*.jpg
+
+# Development files
+*.md
+!README.md
+
+# Scripts
+scripts
+
+# Docker
+docker-compose*.yml
+Dockerfile
+.dockerignore
+docker-entrypoint.sh
+
+# Logs
+*.log
+
+# Local data
+.data
+*.db
+
+# Playwright
+playwright.config.ts
+playwright.*.config.ts
+
+# ESLint, etc
+eslint.config.mjs

@@ -1,0 +1,16 @@
+{
+  "buildCommand": "pnpm build",
+  "outputDirectory": ".next",
+  "installCommand": "pnpm install",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "env": {
+    "MISSION_CONTROL_DATA_DIR": "/tmp/mc-data",
+    "MISSION_CONTROL_DB_PATH": "/tmp/mc-data/mission-control.db"
+  },
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  }
+}
