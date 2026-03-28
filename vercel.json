@@ -1,7 +1,7 @@
 {
   "buildCommand": "pnpm build",
   "outputDirectory": ".next",
-  "installCommand": "pnpm install",
+  "installCommand": "pnpm install --store=node_modules/.pnpm-store",
   "framework": "nextjs",
   "regions": ["iad1"],
   "env": {
@@ -11,6 +11,11 @@
   "git": {
     "deploymentEnabled": {
       "main": true
+    }
+  },
+  "build": {
+    "env": {
+      "PNPM_STORE_DIR": "node_modules/.pnpm-store"
     }
   }
 }

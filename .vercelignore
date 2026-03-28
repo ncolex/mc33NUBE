@@ -2,20 +2,24 @@
 .git
 .gitignore
 
-# Pnpm store
+# Pnpm store - MUST be excluded (688MB+)
 .pnpm-store
+**/.pnpm-store/**
 node_modules/.pnpm-store
+node_modules/**/.pnpm-store/**
 
 # Test files
 tests
-*.test.ts
-*.test.tsx
-*.spec.ts
-*.spec.tsx
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
 
 # Docs (large images)
 docs/*.png
 docs/*.jpg
+docs/**/*.png
+docs/**/*.jpg
 
 # Development files
 *.md
@@ -24,6 +28,7 @@ docs/*.jpg
 # Scripts (keep check-node-version.mjs for build)
 scripts/*
 !scripts/check-node-version.mjs
+scripts/e2e-openclaw/**
 
 # Docker
 docker-compose*.yml
@@ -33,14 +38,32 @@ docker-entrypoint.sh
 
 # Logs
 *.log
+**/*.log
 
 # Local data
 .data
+**/.data/**
 *.db
+**/*.db
 
 # Playwright
 playwright.config.ts
 playwright.*.config.ts
+test-results/**
+playwright-report/**
 
 # ESLint, etc
 eslint.config.mjs
+
+# Build artifacts
+*.tsbuildinfo
+.next/**
+out/**
+dist/**
+build/**
+
+# Misc large files
+public/mc.png
+public/mc-logo.png
+public/brand/*.png
+public/office-sprites/**/*.png
