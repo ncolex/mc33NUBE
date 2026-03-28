@@ -21,8 +21,9 @@ docs/*.jpg
 *.md
 !README.md
 
-# Scripts
-scripts
+# Scripts (keep check-node-version.mjs for build)
+scripts/*
+!scripts/check-node-version.mjs
 
 # Docker
 docker-compose*.yml
